@@ -1,0 +1,39 @@
+<body>
+    <main class="sign-in">
+        <!------ login part Start -->
+        <div class="sign-in-main">
+            <div class="sign-in-left"
+                style="background-image: url('assets/images/login-left-img.png');background-size:cover;">
+                <div class="logo" (click)="openComponent('home')"><img src="assets/images/logo.svg" alt="img"></div>
+                <div class="login-bottom-img">
+                    <img src="assets/images/login-left-bottom.png" alt="img">
+                </div>
+            </div>
+            <div class="sign-in-right">
+                <h3>Don't have an account? <button (click)="openComponent('login')">Signup</button></h3>
+                <h2>Welcome to <strong>HomeU</strong></h2>
+                <p>We make it easy for everyone to fetch data for your <br>properties to take control of your rental
+                    history.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <button class="pass-show"><img src="assets/images/password-show.png" alt="img"></button>
+                    </div>
+                    <div class="form-group">
+                        <label class="check">Remember me
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                        <a href="">Forgot Passord?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+        <!------ login part close -->
+    </main>
+</body>
