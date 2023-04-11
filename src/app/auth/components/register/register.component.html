@@ -11,26 +11,50 @@
             </div>
             <div class="sign-in-right">
                 <h3>Don't have an account? <button (click)="openComponent('login')">Signup</button></h3>
-                <h2>Welcome to <strong>HomeU</strong></h2>
-                <p>We make it easy for everyone to fetch data for your <br>properties to take control of your rental
-                    history.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Enter Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        <button class="pass-show"><img src="assets/images/password-show.png" alt="img"></button>
-                    </div>
-                    <div class="form-group">
-                        <label class="check">Remember me
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
-                        <a href="">Forgot Passord?</a>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
+                <h2>Sign up</h2>
+                <p>Fill the details for sign up to new account.</p>
+                    <form [formGroup]="form">
+
+                        <mat-form-field class="form-group" appearance="outline" [hideRequiredMarker]="hideRequiredMarker">
+                            <mat-label for="name">Full Name</mat-label>
+                            <input matInput formControlName="name" type="text" class="form-control" id="name"
+                            placeholder="Enter full name">
+                        </mat-form-field>
+
+                        <mat-form-field class="form-group" appearance="outline" [hideRequiredMarker]="hideRequiredMarker">
+                            <mat-label for="email">Enter email</mat-label>
+                            <input matInput formControlName="email" type="email" class="form-control" id="email"
+                            placeholder="Enter email">
+                        </mat-form-field>
+
+                        <mat-form-field class="form-group" appearance="outline" [hideRequiredMarker]="hideRequiredMarker">
+                            <mat-label for="phone">Phone</mat-label>
+                            <input matInput formControlName="phone" type="text" class="form-control" id="phone"
+                            placeholder="Enter phone">
+                        </mat-form-field>
+
+                        <mat-form-field class="form-group" appearance="outline" [hideRequiredMarker]="hideRequiredMarker">
+                            <mat-label for="address">Address</mat-label>
+                            <input matInput formControlName="address" type="text" class="form-control" id="address"
+                            placeholder="Enter address">
+                        </mat-form-field>
+
+                        <mat-form-field class="form-group" appearance="outline" [hideRequiredMarker]="hideRequiredMarker">
+                            <mat-label for="unit_number">Unit Number</mat-label>
+                            <input matInput formControlName="unit_number" type="text" class="form-control" id="unit_number"
+                            placeholder="Enter unit number">
+                        </mat-form-field>
+
+                        <mat-form-field class="form-group" appearance="outline" [hideRequiredMarker]="hideRequiredMarker">
+                            <mat-label for="password">Password</mat-label>
+                            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" class="form-control" id="password">
+                            <p mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                            </p>
+                        </mat-form-field>
+
+                        <button type="submit" class="btn btn-primary" (click)="openComponent('login')">Sign up</button>
+
                 </form>
             </div>
         </div>

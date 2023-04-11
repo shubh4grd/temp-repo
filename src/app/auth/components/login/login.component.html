@@ -12,68 +12,34 @@
             <div class="sign-in-right">
                 <h3>Don't have an account? <button (click)="openComponent('register')">Signup</button></h3>
                 <h2>Welcome to <strong>HomeU</strong></h2>
-                <p>We make it easy for everyone to fetch data for your <br>properties to take control of your rental
+                <p class="paragraph-text">We make it easy for everyone to fetch data for your <br>properties to take control of your rental
                     history.</p>
 
-                <!-- <form  [formGroup]="form" class="login-form common-form" (ngSubmit)="logIn">
-        <mat-form-field appearance="outline" [hideRequiredMarker]="hideRequiredMarker">
-          <mat-label for="exampleInputEmail1">Email </mat-label>
-          <input matInput placeholder="Email" type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
-                <!-- <mat-error *ngIf="form.get('email')?.hasError('pattern')">{{valid}}{{email_label}}</mat-error>             -->
-                <!-- <mat-error *ngIf="(form.get('email')?.dirty || form.get('email')?.touched) && form.get('email')?.hasError('required') ">{{email_label}}{{required}}</mat-error> -->
-                <!-- </mat-form-field>
+                <form [formGroup]="form">
 
-        <mat-form-field appearance="outline" [hideRequiredMarker]="hideRequiredMarker">
-          <mat-label for="exampleInputEmail1">Password </mat-label>
-          <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" class="form-control" id="exampleInputPassword1" aria-describedby="emailHelp">
-          <p mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-          </p>
-        </mat-form-field>
-
-        <div class="form-group form-check">
-          
-         <label class="rem">remember me 
-            <input formControlName="checkBox" class="form-control" type="checkbox" >
-            <span class="checkmark"></span>
-          </label>
-
-          <a (click)="openComponent('forgot-password')" class="forgot">forgot</a>
-        </div>
-        <button type="submit" class="btn" (click)="signIn()"> 
-          <div *ngIf="this.loader == true" class="spinner-border" role="status">
-          <span class="sr-only"></span>
-        </div>
-       signin</button>
-
-      </form> -->
-                <form [formGroup]="form" (ngSubmit)="logIn">
-                    <div class="form-group">
-                        <mat-form-field appearance="outline" [hideRequiredMarker]="hideRequiredMarker">
-                            <mat-label for="email">Enter Email </mat-label>
-                            <input matInput type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                            placeholder="Enter Email">
-                            <!-- <mat-error
-                                *ngIf="form.get('email')?.hasError('pattern')">{{valid}}{{email_label}}</mat-error>
-                            <mat-error
-                                *ngIf="(form.get('email')?.dirty || form.get('email')?.touched) && form.get('email')?.hasError('required') ">{{email_label}}{{required}}</mat-error> -->
-
+                        <mat-form-field class="form-group" appearance="outline" [hideRequiredMarker]="hideRequiredMarker">
+                            <mat-label for="email">Email</mat-label>
+                            <input matInput formControlName="email" type="email" class="form-control" id="email"
+                            placeholder="Enter email">
                         </mat-form-field>
-                        <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Enter Email"> -->
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        <button class="pass-show"><img src="assets/images/password-show.png" alt="img"></button>
-                    </div>
-                    <div class="form-group">
-                        <label class="check">Remember me
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
-                        <a href="">Forgot Passord?</a>
-                    </div>
-                    <button type="submit" class="btn btn-primary" (click)="openComponent('dashboard')">Login</button>
+
+                        <mat-form-field class="form-group" appearance="outline" [hideRequiredMarker]="hideRequiredMarker">
+                            <mat-label for="password">Password</mat-label>
+                            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" class="form-control" id="password">
+                            <p mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                            </p>
+                        </mat-form-field>
+
+                        <div class="form-group">
+                            <label class="check">Remember me
+                                <input formControlName="checkBox" class="form-control" type="checkbox" >
+                                <span class="checkmark"></span>
+                            </label>
+                            <a (click)="openComponent('forgot-password')">Forgot Passord?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary" (click)="openComponent('dashboard')">Login</button>
+
                 </form>
             </div>
         </div>
